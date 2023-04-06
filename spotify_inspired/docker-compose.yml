@@ -1,0 +1,16 @@
+version: '23.0.1'
+
+services:
+  src: 
+    image: app:latest
+    build: .
+    ports:
+     - "19000:19000"
+     - "19001:19001"
+     - "19006:19006"
+  environement:
+    - NODE_ENV=dev
+    - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0
+    - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.248.231
+  volumes: 
+    - ./:/src/
